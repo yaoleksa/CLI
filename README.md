@@ -1,6 +1,6 @@
 # Project quick manual
 `initp` is a handy CLI (command line interface) designed for a quick Python project initialization.
-The most convenient and fastest way to get list of existing options is to install the program on machine, and after that open the terminal and type `initp -h` or `initp --help`, but just in case I duplicate the list of commands here.
+The most convenient and fastest way to get the list of existing options is to install the program on the machine, and after that open the terminal and type `initp -h` or `initp --help`, but just in case I duplicate the list of commands here.
 ```
 usage: initp [-h] [-f FILENAME] [-r REQUIREMENTS [REQUIREMENTS ...]] [-v] [-d]
              [name ...]
