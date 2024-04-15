@@ -23,10 +23,11 @@ options:
   -d, --readme          If this option is passed it creates a readme file
   ```
   > [!IMPORTANT]
-  > First of all, you have to download this repository locally on the machine to execute the following actions You can achieve this goal in two ways: by running `git clone REPOSITORY-URL` into the terminal or manually downloading the .zip archive and unzipping it where you want
-  
+  > First of all, you have to download this repository locally on the machine to execute the following actions. You can achieve this goal in two ways: by running `git clone REPOSITORY-URL` into the terminal or manually downloading the .zip archive and unzipping it where you want
+
   > [!TIP]
-  > I deeply recommend using the approach with CLI git cause it is more professional, but it is up to you which approach to use
+  > I deeply recommend using the approach with CLI git cause it is more professional, but it is up to you which approach to use.
+  
   After you download the repository locally, to install the program just run Install file. Run this file you can with two approaches:
   - Click on the file with the right-hand button mouse then click `Run as program` on the drop-down list of options
   - Open the terminal and type `sudo ./Install`
