@@ -1,0 +1,50 @@
+#!/usr/bin/python3
+
+import pathlib
+import argparse
+import subprocess
+
+# init argument parser
+parser = argparse.ArgumentParser(prog="initp")
+
+# add argument to parser
+parser.add_argument('name', action='store', nargs='*',
+                    help='Specifies the name of the Python project which will be created')
+
+# add options
+parser.add_argument('-f', '--filename', help='Specifies the file name of your program. ' +
+                    'If this option is skipped "main.py" will be used as ' +
+                    'the default filename')
+parser.add_argument('-r', '--requirements', help='Defines which non-built-in libraries ' + 
+                    'are mandatory for your program. If this option is skipped ' + 
+                    'it treats like your program does not need any non-built-in libraries',
+                    nargs='+')
+parser.add_argument('-v', '--version', action='store_true',
+                    help='Shows the current version of this program')
+parser.add_argument('-d', '--readme', action='store_true',
+                    help='If this option is passed it creates a readme file')
+
+# get command line arguments
+args = parser.parse_args()
+
+if args.version:
+    print('Initp version: 0.0.1')
+
+if args.name:
+    folderpath = pathlib.Path(args.name[0])
+    folderpath.mkdir(parents=True, exist_ok=False)
+    fullpath = fullpath = folderpath / f"{args.filename}.py" if args.filename else folderpath / "main.py"
+    with open(fullpath, 'w') as outfile:
+        outfile.write('# init line')
+
+    if args.requirements:
+        with open(folderpath / "requirements.txt", "w") as req_file:
+            for req in args.requirements:
+                req_file.write(f"{req}\n")
+        # Store required libraries
+        subprocess.run(["pip", "install", "-r", 
+                        folderpath / "requirements.txt"])
+        
+    if args.readme:
+        with open(folderpath / "README.md", "w") as readme_file:
+            pass
